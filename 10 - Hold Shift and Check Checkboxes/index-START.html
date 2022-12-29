@@ -96,6 +96,28 @@
   </div>
 
 <script>
+  const checkbox = document.querySelectorAll('.inbox input[type="checkbox"]');
+  // console.log(checkbox)
+  let lastChecked;
+  
+  function handleChecked(e){
+    let inBetween = false;
+    if(e.shiftKey && this.checked){ //按住shift鍵並且已經有checked
+      checkbox.forEach(item => { //開始檢查checkbox
+        if(item === this || item === lastChecked){ //如果是checked的item 或 有lastChecked 
+          inBetween =!inBetween //代表在中間
+          // console.log('inbetween')
+        }
+        if(inBetween){
+          item.checked = true; //如果在中間就checked
+        }
+      })
+    }
+    lastChecked = this;
+  }
+
+  checkbox.forEach((item) => item.addEventListener('click', handleChecked));
+
 </script>
 </body>
 </html>

@@ -18,28 +18,64 @@
     }
 
     // Regular
+    console.log('regular!');
 
     // Interpolated
+    console.log('this is %s string', '\u{2764}');
 
     // Styled
+    console.log('%c this is styled ', 'color: pink; font-size: 24px');
 
     // warning!
+    console.warn('this is warn');
 
     // Error :|
+    console.error('this is error');
 
     // Info
+    console.info('this is info');
 
     // Testing
+    console.assert(1===1, 'that is wrong');
+    console.assert(1===4, 'that is wrong');
+    
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ou'),'p has no class')
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p); //以物件方式呈現一個元素的屬性
 
     // Grouping together
+    dogs.forEach( dog =>{
+      console.group(`${dog.name}`) //console.groupCollapsed(`${dog.name}`);
+      console.log(`dog's name: ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`)
+    })
+
+    console.table(dogs);
 
     // counting
+    console.count('i am getting better');
+    console.count('cool');
+    console.count('i am getting better');
+    console.count('i am getting better');
+    console.count('cool');
 
     // timing
+    console.time('fetch');
+    fetch('https://api.github.com/users/wesbos')
+    .then((data) => data.json())
+    .then((data) => {
+      console.timeEnd('fetch')
+      console.log(data)
+    })
+
+
 
   </script>
 </body>

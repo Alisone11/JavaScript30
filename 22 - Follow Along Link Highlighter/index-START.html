@@ -27,6 +27,40 @@
 
   <script>
     // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    const triggers = document.querySelectorAll('a');
+    const highlight = document.createElement('span');
+    highlight.classList.add('highlight');
+    document.body.appendChild(highlight);
+
+    function highlightLink() {
+      const linkCoord = this.getBoundingClientRect()
+      const coords = {
+        width: linkCoord.width,
+        height: linkCoord.height,
+        top: linkCoord.top + window.scrollX,
+        left: linkCoord.left + window.scrollY
+      }
+      highlight.style.width = `${coords.width}px`
+      highlight.style.height = `${coords.height}px`
+      highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`
+      }
+
+    triggers.forEach(a => a.addEventListener('mouseenter', highlightLink))
+
+
+    /*
+    const triggers = document.querySelectorAll('a')
+
+    function highlight() {
+      this.classList.add('highlight')
+      }
+    function noHighlight(){
+      this.classList.remove('highlight')
+    }
+
+    triggers.forEach(a => a.addEventListener('mouseenter', highlight))
+    triggers.forEach(a => a.addEventListener('mouseleave', noHighlight))
+    */
   </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+
+# 請輸入描述您變更的提交訊息。開頭是「#」
+# 的行皆會忽略。提交訊息空白則取消本次提交作業。
+#
+# 位於分支 master
+# 您的分支與上游分支 'origin/master' 一致。
+#
+# 要提交的變更：
+#	修改：     19 - Webcam Fun/index.html
+#	修改：     19 - Webcam Fun/scripts-FINISHED.js
+#	刪除：     21 - Geolocation/index-FINISHED.html
+#	刪除：     22 - Follow Along Link Highlighter/index-FINISHED.html
+#	修改：     22 - Follow Along Link Highlighter/index-START.html
+#	修改：     22 - Follow Along Link Highlighter/style.css
+#	刪除：     23 - Speech Synthesis/index-FINISHED.html
+#	修改：     23 - Speech Synthesis/index-START.html
+#	刪除：     24 - Sticky Nav/index-FINISHED.html
+#	修改：     24 - Sticky Nav/index-START.html
+#	刪除：     24 - Sticky Nav/style-FINISHED.css
+#	修改：     24 - Sticky Nav/style-START.css
+#m

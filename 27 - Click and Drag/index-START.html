@@ -33,9 +33,40 @@
     <div class="item item24">24</div>
     <div class="item item25">25</div>
   </div>
-
-<script>
-</script>
-
   </body>
 </html>
+
+<script>
+const slider = document.querySelector('.items');
+let isDown = false; // 按住滑鼠
+let startX; // 按住滑鼠的起始點
+let scrollLeft; // 已滾動過左邊距離
+
+slider.addEventListener('mousedown', (e) => { 
+  isDown = true
+  slider.classList.add('active')
+  startX = e.pageX - slider.offsetLeft // 扣除滾動條窗口以外的距離
+  scrollLeft = slider.scrollLeft
+ })
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false
+  slider.classList.remove('active')
+})
+
+slider.addEventListener('mouseup', () => {
+  isDown = false
+  slider.classList.remove('active')
+})
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return
+  e.preventDefault();
+  let x = e.pageX - slider.offsetLeft // 按住滑鼠的終止點
+  let walk = (x - startX) * 3 // 按住滑鼠移動的距離，為了讓滾動效果更明顯於是 * 3
+  slider.scrollLeft = scrollLeft - walk 
+// 調整目前滾動條的位置 = 按住滑鼠的滾動條起始點 - 按住滑鼠移動的距離。
+// scrollLeft - walk 是為了讓移動更順暢，且能夠左右移動
+})
+
+</script>
